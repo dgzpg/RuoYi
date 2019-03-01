@@ -21,7 +21,9 @@
 
 后端： spring boot  、jpa、spring  session +spring security+redis
 其中，spring boot主要使用了Thymeleaf模板，另外还添加了spring boot的热部署，不需要每次修改后运行项目都要手动的重启项目。
+
 jpa主要负责实体对象的持久化，完成系统model层的操作，包括实体的增删改查等，这样就可以进行面向对象编程。
+
 另外，系统的session主要是运用了spring session联合spring security和redis来管理，spring security监控session的状态，当session过期的时候跳转到指定的请求，而session是保存到redis中的。
 
 ##  在编码阶段遇到的坑：https://blog.csdn.net/qq_40133908/article/details/87988926
