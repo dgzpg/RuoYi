@@ -1,11 +1,17 @@
 ##  系统简介
-本系统主要模仿公司管理员管理公司的部门，岗位，角色和员工的系统。系统管理员拥有本系统最大的权限，可以针对部门、岗位、角色和用户进行管理操作。不同的用户拥有不同的权限，不同的权限可以进行不同的操作，最低权限的用户只能进行查询操作，稍高一点的可以对用户进行增删改等操作，再高一点的可以针对岗位进行增删改操作，然后再高的可以针对部门进行增删改操作，只有系统管理员可以为用户修改用户的角色。
+　　本系统主要模仿公司管理员管理公司的部门，岗位，角色和员工的系统。系统管理员拥有本系统最大的权限，可以针对部门、岗位、角色和用户进行管理操作。不同的用户拥有不同的权限，不同的权限可以进行不同的操作，最低权限的用户只能进行查询操作，稍高一点的可以对用户进行增删改等操作，再高一点的可以针对岗位进行增删改操作，然后再高的可以针对部门进行增删改操作，只有系统管理员可以为用户修改用户的角色。
 
 ##  系统项目模块图
 ![img](https://github.com/pgoup/RuoYi/blob/master/%E5%9B%BE%E5%83%8F/ruoyi1.png)
 
 ##  系统的项目设计图
 ![img](https://github.com/pgoup/RuoYi/blob/master/%E5%9B%BE%E5%83%8F/ruoyi2.png)
+
+## 系统截图
+
+![img](https://github.com/pgoup/RuoYi/blob/master/%E5%9B%BE%E5%83%8F/ruoyi4.jpg)
+
+![img](https://github.com/pgoup/RuoYi/blob/master/%E5%9B%BE%E5%83%8F/ruoyi5.jpg)
 
 ##  系统的数据库设计图
 ![img](https://github.com/pgoup/RuoYi/blob/master/%E5%9B%BE%E5%83%8F/ruoyi3.jpg)
