@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>个人信息</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+   	<link th:href="@{/js/jquery.min.js}"/>
+	<link th:href="@{/js/bootstrap.min.js}"/>
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row animated fadeInRight">
+            <div class="col-sm-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>个人信息</h5>
+                        
+                    <div class="ibox-tools dropdown">
+                        
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-edit">修改</i>
+                            
+                        </a>
+                        <ul class="dropdown-menu ">
+                            <li><a th:href="@{/editInformation(countId=${user.getCountId()})}">修改信息</a></li>
+                            <li><a th:href="@{/changePassword(countId=${user.getCountId()})}">修改密码</a></li>
+                            <li><a th:href="@{/changePicture(countId=${user.getCountId()})}">修改头像</a></li>
+                           
+                            
+                        </ul>
+                       
+                    </div>
+                    </div>
+                    <div class="contact-box">
+	                        <div class="col-sm-4">
+	                            <div class="text-center">
+	                                <img alt="image" class="img-circle m-t-xs img-responsive"  height="60" width="60"th:src="${user.getPath()}">
+	                                
+	                            </div>
+	                        </div>
+	                        <div class="col-sm-8">
+	                            <h3><strong>[[${user.getCountId()}]]</strong></h3>
+	                            <p><i class="fa fa-user"></i> [[${user.getUserName()}]] / [[${user.getRole()}]]
+	                            <p><i class="fa fa-phone"></i> [[${user.getTelephone()}]]</p>
+	                            <p><i class="fa fa-group"></i> [[${user.getDepartment()}]] / [[${user.getPosition()}]]</p>
+	                            <p><i class="fa fa-transgender"></i> 性别：[[${user.getSex()}]]</p>
+	                            <p><i class="fa fa-envelope-o"></i> [[${user.getEmail()}]]</p>
+	                            <p><i class="fa fa-calendar"></i> [[${user.getRegistrastionDate()}]]</p>
+	                            <p><i class="fa fa-calendar"></i> [[${user.getPersonalDescription()}]]</p>
+	                        </div>
+	                        <div class="clearfix"></div>
+	                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+   
+</body>
+</html>

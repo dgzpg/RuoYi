@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<meta charset="utf-8">
+<head >
+
+<link th:href="@{/h-ui/css/H-ui.min.css}" rel="stylesheet"/>
+<link th:href="@{/h-ui.admin/css/H-ui.admin.css}" rel="stylesheet"/>
+<link th:href="@{/css/iconfont.css}" rel="stylesheet"/>
+<link th:href="@{/h-ui.admin/skin/default/skin.css}" rel="stylesheet"/>
+<link th:href="@{/h-ui.admin/css/style.css}" rel="stylesheet"/>
+</head>
+<body class="white-bg">
+	<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+		<form action="" class="form-horizontal m" id="form-user-edit" method="post" th:object=${user} th:action="@{/getEditInformation(countId=${user.getCountId()})}">
+			<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>账号：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text" disabled="disabled" name="role" id="role" th:field="*{countId}">
+					
+				</div>
+			</div>
+			<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>角色：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text" disabled="disabled"placeholder="" name="role" id="role"th:field="*{role}">
+				</div>
+			</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>岗位：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="" disabled="disabled"name="position" id="position"th:field="*{position}">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>部门：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="" disabled="disabled"name="department" id="department"th:field="*{department}">
+			</div>
+		</div>
+			
+			<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="radio-box">
+					<input name="sex" type="radio" id="sex-1" checked value="男">
+					<label for="sex-1">男</label>
+				</div>
+				<div class="radio-box">
+					<input type="radio" id="sex-2" name="sex" value="女">
+					<label for="sex-2">女</label>
+				</div>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text"  required="required" placeholder="请填写用户名" name="userName" id="userName">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>联系方式：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="tel" class="input-text"pattern="(\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$"  required="required" placeholder="请输入联系方式" name="telephone" id="telephone">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="email" class="input-text" required="required"  placeholder="请输入邮箱" name="email" id="email">
+			</div>
+		</div>
+			
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">个性签名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="personalDescription" cols="" rows="" class="textarea"  placeholder="说点什么...不超过50个字" onKeyUp="textarealength(this,50)"></textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/50</p>
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3" >
+				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+				<a th:href="@{/information(countId=*{countId})}" class="btn btn-primary radius" style="text-decoration:none">
+					返回
+				</a>
+			</div>
+		</div>	
+		</form>
+	</div>
+	
+</body>
+</html>

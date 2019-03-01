@@ -1,0 +1,94 @@
+﻿<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="static/favicon.ico" >
+<link rel="Shortcut Icon" href="static/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link th:href="@{/h-ui/css/H-ui.min.css}" rel="stylesheet"/>
+<link th:href="@{/h-ui.admin/css/H-ui.admin.css}" rel="stylesheet"/>
+<link th:href="@{/css/iconfont.css}" rel="stylesheet"/>
+<link th:href="@{/h-ui.admin/skin/default/skin.css}" rel="stylesheet"/>
+<link th:href="@{/h-ui.admin/css/style.css}" rel="stylesheet"/>
+
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script><![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+</head>
+<body>
+
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb">
+		 首页 
+		<span class="c-gray en">&gt;</span> 岗位
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" >刷新
+			
+		</a>
+	</nav>
+	<div class="Hui-article">
+		<article class="cl pd-20">
+			<div class="text-c"> 
+				<form action=""th:action="@{/searchPosition}">
+				<input type="text" class="input-text" style="width:250px" placeholder="输入编码或者岗位名" id="" name="name">
+				<button type="submit" class="btn btn-success radius" id="" > 搜寻岗位</button>
+				<a th:href="@{/addPosition}" class="btn btn-primary radius">添加岗位</a>
+				 <span class="r">共有数据：<strong th:text="${positions.size()}"></strong> 条</span>
+				</form>
+				 
+			
+			</div> 
+			<div class="mt-20">
+				<table class="table table-border table-bordered table-hover table-bg table-sort">
+					<thead>
+						<tr class="text-c">
+							<th width="100"><input type="checkbox" name="" value=""></th>
+							<th width="150">ID</th>
+							<th width="200">岗位编码</th>
+							<th width="200">岗位名</th>
+							<th width="100">岗位人数</th>
+							<th width="100">所属部门</th>
+							<th width="200">注册时间</th>
+							<th width="250">操作</th>
+						</tr>
+					</thead>
+					<tbody >
+						<tr class="text-c cl pd-5 bg-1 bk-gray mt-20" th:each="position : ${positions}">
+							<td><input type="checkbox" value="1" name=""></td>
+							<td><span th:text="${position.getId()}"></span></td>
+							<td><span th:text="${position.getCoding()}"></span></td>
+							<td><span th:text="${position.getPositionName()}"></span></td>
+							<td><span th:text="${position.getUserNumber()}"></span> </td>
+							<td><span th:text="${position.getDepartmentName()}"></span> </td>
+							<td><span th:text="${position.getCreateTime()}"></span></td>
+							
+							<td class="text-c">
+								<a  th:href="@{/edit(id=${position.getId()})}" class="btn btn-primary radius" style="text-decoration:none">
+									修改
+								</a> 
+								<a th:href="@{/deletePosition(id=${position.getId()})}" class="btn btn-primary radius" style="text-decoration:none">
+									删除
+								</a>
+							</td>
+						</tr>
+						
+					
+					</tbody>
+				</table>
+			</div>
+		</article>
+	</div>
+</section>
+
+</body>
+</html>
